@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+/* CSS Variables - MLBB Theme */
+:root {
+  --mlbb-dark: #0a0e1a;
+  --mlbb-darker: #151923;
+  --mlbb-blue: #3b82f6;
+  --mlbb-yellow: #fbbf24;
+}
+
+body {
+  font-family: var(--font-geist-sans);
+  background: #0a0e1a;
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+/* Extra Utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* MLBB Simple Pattern Background */
+.bg-mlbb-pattern {
+  background-image: linear-gradient(
+      to right,
+      rgba(59, 130, 246, 0.02) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* Glow Animations */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+}
+
+@keyframes glow-border {
+  0%,
+  100% {
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    border-color: rgba(59, 130, 246, 0.5);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-glow {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-glow-border {
+  animation: glow-border 2s ease-in-out infinite;
+}
+
+/* Scan Animations */
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(300%);
+  }
+}
+
+/* Smooth transitions */
+html,
+body,
+button,
+input,
+textarea {
+  @apply transition-all duration-300;
+}
+
+/* Custom Scrollbar - Simple */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #151923;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #60a5fa;
+}
+
+/* Glass Effect - Simple */
+.glass-mlbb {
+  background: rgba(21, 25, 35, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+/* Simple Neon */
+.neon-blue {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+}
+
+.neon-yellow {
+  box-shadow: 0 0 15px rgba(251, 191, 36, 0.3);
+}
+
+/* Button Hover */
+.btn-mlbb {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-mlbb:hover {
+  transform: translateY(-2px);
+}
+
+/* Card Hover */
+.card-mlbb {
+  transition: all 0.3s ease;
+}
+
+.card-mlbb:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+}
