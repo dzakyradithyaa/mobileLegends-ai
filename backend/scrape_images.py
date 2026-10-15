@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.options import Options
 from urllib.parse import urlparse, parse_qs
 
 # --- KONFIGURASI SCRAPER ---
-HERO_NAME = 'Layla' 
+HERO_NAME = 'Balmond' 
 SEARCH_TERM = f'{HERO_NAME} mobile legends' 
 OUTPUT_DIR = f'../dataset/{HERO_NAME}' 
 MAX_IMAGES = 150 # Target jumlah gambar yang ingin diunduh

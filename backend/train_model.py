@@ -81,7 +81,7 @@ model = Model(inputs=base_model.input, outputs=hero_output)
 # 4. KOMPILASI MODEL
 # ============================================================
 model.compile(
-    optimizer=Adam(learning_rate=0.0002),   # LR 0.0002 sesuai setting baru
+    optimizer=Adam(learning_rate=0.0002),   # LR 0.0002 
     loss='categorical_crossentropy',
     metrics=['accuracy']
 )
